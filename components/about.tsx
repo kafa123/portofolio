@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -8,42 +7,36 @@ import {
   useReducedMotion,
 } from "motion/react";
 
-const principles = [
+const topics = [
   {
-    number: "01",
-    label: "THINK",
-    title: "Question\nthings.",
+    id: "hino",
+    label: "Hino internship",
+    period: "Aug 2025 – Feb 2026",
+    title: "Returnable package tracking.",
     description:
-      "I find myself asking why something works the way it does before thinking about how to build it. Understanding the problem matters just as much as finding the solution.",
-    quote: "Curiosity starts with a question.",
+      "At PT Hino Motors Manufacturing Indonesia I built the backend for a web-based inventory system that monitors returnable packages. My part covered application logic, database integration, and system testing. It is a monolith on ASP.NET Core, Entity Framework Core, and SQL Server.",
+    stack: "ASP.NET Core, EF Core, SQL Server",
     color: "text-primary",
   },
   {
-    number: "02",
-    label: "EXPLORE",
-    title: "Stay\ncurious.",
+    id: "evaluation",
+    label: "Evaluation",
+    period: "Final project",
+    title: "Tested against a standard.",
     description:
-      "I enjoy stepping into unfamiliar territory, even when it means starting from zero. There is something exciting about discovering a subject I know almost nothing about.",
-    quote: "There is always something new to discover.",
+      "I evaluated the system with ISO/IEC 25010 on three characteristics: functional suitability, performance efficiency, and maintainability. During my thesis revision I added a before-and-after performance experiment.",
+    stack: "ISO/IEC 25010",
     color: "text-cyan",
   },
   {
-    number: "03",
-    label: "CREATE",
-    title: "Learn by\ndoing.",
+    id: "other",
+    label: "Other projects",
+    period: "2023 – 2025",
+    title: "Backend in other domains.",
     description:
-      "Ideas become clearer when I experiment, build, make mistakes, and try again. I would rather explore an imperfect idea than leave it untouched.",
-    quote: "Build. Break. Understand. Repeat.",
+      "Open MRI is a simulation platform for nurse training, with admin tools to manage content and track progress. BROMO collects environmental and operational data from broiler farms in real time. I have also built two games, Finion in Unity and Anomali Hitam in Unreal Engine 5.",
+    stack: "Next.js, Prisma, PostgreSQL, Laravel, Kotlin, MySQL",
     color: "text-purple",
-  },
-  {
-    number: "04",
-    label: "GROW",
-    title: "Keep\nevolving.",
-    description:
-      "I see learning as a continuous process, not something that ends when a project is finished. Every experience leaves something worth carrying forward.",
-    quote: "Never stop becoming.",
-    color: "text-orange",
   },
 ];
 
@@ -51,11 +44,7 @@ export default function About() {
   const [activeIndex, setActiveIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
-  const active = principles[activeIndex];
-
-  function selectPrinciple(index: number) {
-    setActiveIndex(index);
-  }
+  const active = topics[activeIndex];
 
   const transition = shouldReduceMotion
     ? { duration: 0 }
@@ -72,88 +61,66 @@ export default function About() {
       <div className="mx-auto w-[calc(100%-36px)] max-w-[1100px]">
 
         {/* SECTION HEADER */}
-        <div className="flex items-center justify-between border-b border-line pb-4 font-mono text-[10px] tracking-[0.15em] text-muted md:text-xs">
-          <span>01 — ABOUT ME</span>
-          <span>BEYOND THE CODE</span>
+        <div className="flex items-center justify-between border-b border-line pb-4 font-mono text-xs text-muted">
+          <span>About</span>
+          <span>Backend developer</span>
         </div>
 
         {/* INTRODUCTION */}
         <div className="grid gap-10 py-20 md:grid-cols-[1.2fr_0.8fr] md:items-end md:py-28">
-          <div>
-            <span className="font-mono text-[11px] tracking-widest text-primary">
-              A LITTLE ABOUT HOW I THINK
-            </span>
-
-            <h2 className="mt-8 text-[clamp(46px,8vw,88px)] leading-[0.98] font-bold tracking-[-0.075em]">
-              Curiosity is
-              <br />
-              where I <span className="text-primary">start.</span>
-            </h2>
-          </div>
+          <h2 className="text-[clamp(40px,7vw,80px)] leading-[1] font-bold tracking-[-0.06em]">
+            I build backend systems for real operations.
+          </h2>
 
           <div className="md:pb-2">
-            <p className="text-xl leading-relaxed tracking-tight md:text-2xl">
-              I&apos;ve never been good at staying inside one box.
+            <p className="text-sm leading-[1.9] text-secondary-text md:text-base">
+              I&apos;m a Software Engineering student at Universitas Gadjah
+              Mada. My final project was an inventory system that monitors
+              returnable packages, built during my internship at PT Hino
+              Motors Manufacturing Indonesia.
             </p>
 
             <p className="mt-5 text-sm leading-[1.9] text-secondary-text md:text-base">
-              I enjoy exploring ideas, understanding how things work,
-              and discovering connections between seemingly different
-              things. For me, curiosity is not just about finding
-              answers. It is also about knowing which questions to ask.
+              Most of my work is backend: ASP.NET Core, Laravel, and
+              Next.js, with SQL Server, MySQL, and PostgreSQL behind them.
             </p>
           </div>
         </div>
 
         <div className="h-px bg-line" />
 
-        {/* INTERACTIVE PRINCIPLES */}
+        {/* WORK DETAILS */}
         <div className="py-20 md:py-28">
-          <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div>
-              <span className="font-mono text-xs tracking-widest text-primary">
-                01.1 — MY MINDSET
-              </span>
-
-              <h3 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                How I approach things.
-              </h3>
-            </div>
-
-            <span className="font-mono text-[10px] tracking-widest text-muted">
-              MY FOUR WAYS OF THINKING
-            </span>
-          </div>
+          <h3 className="mb-12 text-3xl font-semibold tracking-tight md:text-4xl">
+            What I&apos;ve worked on
+          </h3>
 
           <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
 
             {/* NAVIGATION */}
-            <div className="flex gap-2 overflow-x-auto pb-2 md:flex-col md:gap-0 md:overflow-visible md:pb-0">
-              {principles.map((item, index) => {
+            <div
+              role="tablist"
+              aria-label="Work details"
+              className="flex gap-2 overflow-x-auto pb-2 md:flex-col md:gap-0 md:overflow-visible md:pb-0"
+            >
+              {topics.map((item, index) => {
                 const isActive = activeIndex === index;
 
                 return (
                   <button
-                    key={item.number}
+                    key={item.id}
                     type="button"
-                    onClick={() => selectPrinciple(index)}
-                    aria-pressed={isActive}
-                    className={`group relative flex min-w-fit items-center gap-4 border-b px-4 py-4 text-left transition-colors md:w-full md:gap-5 md:px-5 md:py-6 ${
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setActiveIndex(index)}
+                    className={`group relative flex min-w-fit flex-col gap-1 border-b px-4 py-4 text-left transition-colors md:w-full md:px-5 md:py-6 ${
                       isActive
                         ? "border-primary bg-surface"
                         : "border-line hover:bg-surface/60"
                     }`}
                   >
                     <span
-                      className={`font-mono text-xs transition-colors ${
-                        isActive ? "text-primary" : "text-muted"
-                      }`}
-                    >
-                      {item.number}
-                    </span>
-
-                    <span
-                      className={`text-sm font-semibold tracking-widest transition-colors ${
+                      className={`text-sm font-semibold transition-colors ${
                         isActive
                           ? "text-foreground"
                           : "text-muted group-hover:text-secondary-text"
@@ -162,20 +129,14 @@ export default function About() {
                       {item.label}
                     </span>
 
-                    <span
-                      className={`ml-auto hidden text-sm transition-all md:block ${
-                        isActive
-                          ? "translate-x-0 text-primary opacity-100"
-                          : "-translate-x-2 text-muted opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-                      }`}
-                    >
-                      →
+                    <span className="font-mono text-xs text-muted">
+                      {item.period}
                     </span>
 
                     {isActive && (
                       <motion.span
                         layoutId="about-active-indicator"
-                        className="absolute bottom-0 left-0 h-[2px] w-full bg-primary md:bottom-0 md:left-0 md:h-full md:w-[2px]"
+                        className="absolute bottom-0 left-0 h-[2px] w-full bg-primary md:h-full md:w-[2px]"
                         transition={transition}
                       />
                     )}
@@ -185,10 +146,13 @@ export default function About() {
             </div>
 
             {/* CONTENT PANEL */}
-            <div className="relative min-h-[390px] overflow-hidden border border-line bg-surface p-7 md:min-h-[440px] md:p-12">
+            <div
+              role="tabpanel"
+              className="relative min-h-[360px] overflow-hidden border border-line bg-surface p-7 md:min-h-[400px] md:p-12"
+            >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.article
-                  key={active.number}
+                  key={active.id}
                   initial={{
                     opacity: 0,
                     y: shouldReduceMotion ? 0 : 18,
@@ -199,102 +163,25 @@ export default function About() {
                     y: shouldReduceMotion ? 0 : -12,
                   }}
                   transition={transition}
-                  className="relative z-10 flex h-full min-h-[340px] flex-col justify-between md:min-h-[340px]"
+                  className="flex h-full min-h-[300px] flex-col justify-between"
                 >
                   <div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs tracking-widest text-muted">
-                        PRINCIPLE / {active.number}
-                      </span>
-
-                      <span className={`font-mono text-xs tracking-widest ${active.color}`}>
-                        {active.label}
-                      </span>
-                    </div>
-
-                    <h4 className="mt-12 whitespace-pre-line text-[clamp(48px,7vw,76px)] leading-[0.95] font-bold tracking-[-0.07em]">
-                      {active.title.split("\n").map((line, index) => (
-                        <span key={line}>
-                          {index === 1 ? (
-                            <span className={active.color}>{line}</span>
-                          ) : (
-                            line
-                          )}
-                          {index === 0 && <br />}
-                        </span>
-                      ))}
+                    <h4 className="text-[clamp(32px,4.5vw,52px)] leading-[1.05] font-bold tracking-[-0.05em]">
+                      {active.title}
                     </h4>
 
-                    <p className="mt-8 max-w-[520px] text-sm leading-[1.9] text-secondary-text md:text-base">
+                    <p className="mt-8 max-w-[560px] text-sm leading-[1.9] text-secondary-text md:text-base">
                       {active.description}
                     </p>
                   </div>
 
                   <div className="mt-12 border-t border-line pt-6">
-                    <p className={`font-mono text-xs tracking-wide ${active.color}`}>
-                     {active.quote}
+                    <p className={`font-mono text-xs ${active.color}`}>
+                      {active.stack}
                     </p>
                   </div>
                 </motion.article>
               </AnimatePresence>
-
-              {/* BACKGROUND NUMBER */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-5 -top-12 select-none font-mono text-[180px] font-bold leading-none tracking-tighter text-foreground/[0.025] md:-right-2 md:-top-16 md:text-[260px]"
-              >
-                {active.number}
-              </span>
-            </div>
-          </div>
-
-          {/* PROGRESS */}
-          <div className="mt-8 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-xs text-primary">
-                {active.number}
-              </span>
-
-              <div className="h-[2px] w-24 overflow-hidden bg-line md:w-40">
-                <motion.div
-                  className="h-full bg-primary"
-                  animate={{
-                    width: `${((activeIndex + 1) / principles.length) * 100}%`,
-                  }}
-                  transition={transition}
-                />
-              </div>
-
-              <span className="font-mono text-xs text-muted">04</span>
-            </div>
-
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={() =>
-                  setActiveIndex(
-                    (current) =>
-                      (current - 1 + principles.length) % principles.length
-                  )
-                }
-                aria-label="Previous principle"
-                className="flex h-11 w-11 items-center justify-center border border-line text-foreground transition-colors hover:border-primary hover:text-primary"
-              >
-                ←
-              </button>
-
-              <button
-                type="button"
-                onClick={() =>
-                  setActiveIndex(
-                    (current) => (current + 1) % principles.length
-                  )
-                }
-                aria-label="Next principle"
-                className="flex h-11 w-11 items-center justify-center border border-line text-foreground transition-colors hover:border-primary hover:text-primary"
-              >
-                →
-              </button>
             </div>
           </div>
         </div>
@@ -304,9 +191,7 @@ export default function About() {
         {/* ACADEMIC BACKGROUND */}
         <div className="grid gap-8 py-12 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <span className="font-mono text-[10px] tracking-widest text-muted">
-              ACADEMIC BACKGROUND
-            </span>
+            <span className="font-mono text-xs text-muted">Education</span>
 
             <h3 className="mt-3 text-lg font-semibold">
               Software Engineering
@@ -322,25 +207,8 @@ export default function About() {
               3.84
             </span>
 
-            <p className="mt-1 font-mono text-[10px] tracking-widest text-muted">
-              GPA / 4.00
-            </p>
+            <p className="mt-1 font-mono text-xs text-muted">GPA / 4.00</p>
           </div>
-        </div>
-
-        {/* CLOSING */}
-        <div className="border-t border-line px-5 pt-16 text-center md:pt-20">
-          <p className="text-2xl leading-relaxed tracking-tight md:text-4xl">
-            Still curious.
-            <br />
-            Still learning.
-            <br />
-            <span className="text-primary">Still becoming.</span>
-          </p>
-
-          <span className="mt-10 inline-block font-mono text-[10px] text-muted">
-            END OF NOTE_
-          </span>
         </div>
       </div>
     </section>

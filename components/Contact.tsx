@@ -9,7 +9,7 @@ import { Mail, FileText, FileTextIcon } from "lucide-react";
 
 const EMAIL = "123kafabih@gmail.com";
 const GITHUB = "https://github.com/kafa123";
-const LINKEDIN = "https://www.linkedin.com/in/your-username/";
+const LINKEDIN = "https://www.linkedin.com/in/nur-muhammad-kafabih/";
 const CV = "/cv.pdf";
 
 const channels = [
