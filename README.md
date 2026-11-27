@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kafabih — Personal Portfolio
+
+A personal portfolio website built to showcase my background, mindset, skills, and selected projects as a Software Engineering graduate.
+
+Designed with a dark Monokai-inspired theme, subtle animations, and a minimal interface that reflects my curiosity and approach to building things.
+
+## Overview
+
+This portfolio is more than a collection of projects. It is a space to introduce myself, share how I approach problems, and showcase the things I have explored and built.
+
+**Live Website:** [Add your portfolio URL here]
+
+## Features
+
+- **Personal Introduction** — A brief introduction and overview of my background.
+- **About Me** — An interactive section highlighting the principles behind how I think, learn, and create.
+- **Skills** — A showcase of technologies and tools I have worked with.
+- **Projects** — A collection of selected projects and experiments.
+- **Contact** — Direct access to my email, GitHub, LinkedIn, and resume.
+- **Responsive Design** — Layouts designed for desktop and mobile screens.
+- **Motion Animations** — Subtle transitions and interactive elements for a more engaging experience.
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| [Next.js](https://nextjs.org/) | React framework and application structure |
+| [React](https://react.dev/) | UI development |
+| [TypeScript](https://www.typescriptlang.org/) | Static typing |
+| [Tailwind CSS](https://tailwindcss.com/) | Styling and responsive layouts |
+| [Motion](https://motion.dev/) | Animations and interactive transitions |
+| [React Icons](https://react-icons.github.io/react-icons/) | Platform and technology icons |
+| [Lucide](https://lucide.dev/) | Interface icons |
+
+## Design
+
+The website uses a dark color palette inspired by Monokai, with green as its primary accent color.
+
+The design focuses on:
+
+- Minimalist layouts and clear visual hierarchy.
+- Consistent typography and spacing.
+- Subtle animations rather than excessive visual effects.
+- A cohesive visual identity across all sections.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Make sure you have the following installed:
+
+- Node.js
+- npm
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-repository.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd your-repository
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```text
+.
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── navbar.tsx
+│   ├── hero.tsx
+│   ├── about.tsx
+│   ├── skills.tsx
+│   ├── projects.tsx
+│   └── contact.tsx
+│
+├── public/
+│   └── cv.pdf
+│
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Some personal information is configured directly in the Contact component:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Email address
+- GitHub profile
+- LinkedIn profile
+- Resume file
 
-## Learn More
+Place your resume inside the `public` directory and update its path in the component.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project can be deployed using [Vercel](https://vercel.com/), the platform built by the creators of Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Connect your GitHub repository to Vercel and follow the deployment instructions.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is intended as a personal portfolio. Feel free to use it as inspiration for your own portfolio, but please replace personal information, content, and branding with your own.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Built with curiosity and a little bit of code.**
